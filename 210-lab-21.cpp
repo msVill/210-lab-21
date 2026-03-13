@@ -2,8 +2,16 @@
 using namespace std;
 // Requirements: mod. so that each node has a Goat class object.
 // Create a Goat class. w/--> Private: int age; string name, color; string array names[] (of 15 names) & 
-// string array colors[] (15 colors). 2 Constructors
-// 
+// string array colors[] (15 colors). 2 Constructors.
+// Constructor 1: (Default) randomly assign age: 1-20. name: from the 15 element array. 
+// color: from the 15 element array.
+// Constructor: (Parameter) 3 parameters. age, name[], color[]
+// TASK: Mod. DoublyLinkedList class's push_front() & push_back(): Got obj. as a parameter, not int.
+// TASK: In main(): create a DoublyLinkedList obj. Add it to a random nuber of Goat obj., range 5-20 ~
+// TASK: In main(): call the methods to print both forward and backward
+// TASK: use srand(time(0)), as one of the first lines in main() to randomize your random numbers.
+// TASK: update both of the print() methods that are in the class. Display text: "List is empty" if empty/
+// output the list.
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 class DoublyLinkedList {
