@@ -1,4 +1,7 @@
 #include <iostream>
+#include <cstdlib>
+#include <string>
+#include <ctime>
 using namespace std;
 // Requirements: mod. so that each node has a Goat class object.
 // Create a Goat class. w/--> Private: int age; string name, color; string array names[] (of 15 names) &
@@ -20,6 +23,26 @@ class Goat {
     int age;
     string name;
     string color;
+
+    string names[15] = {
+        "Saige", "Bowen", "Leighton", "Kylan", "Amelie",
+        "Franklin", "Marceline", "Jaylen", "Saoirse","Dilan",
+        "Jolene","Antonio","Keily","Lucian","Scarlett"
+    };
+    string colors[15] = {
+        "White","Black","Brown","Gold","Silver",
+        "Red","Gray","Spotted","Cream","Tan",
+        "Blue","Mauve","Yellow","Orange","Purple"
+    };
+
+    public:
+    // Constructors.
+    Goat() {
+        // needs to be randomly selected:
+        age = rand() % 20 + 1;
+        name = names[rand() % 15]; // wait. this is an array, so I will need to place it within the brackets.
+        color = colors[rand() % 15]
+    }
 
 };
 
