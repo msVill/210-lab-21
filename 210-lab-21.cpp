@@ -7,7 +7,7 @@ using namespace std;
 
 // Constructor 1: (Default) randomly assign age: 1-20. name: from the 15 element array.
 // color: from the 15 element array.
-// TASK: Mod. DoublyLinkedList class's push_front() & push_back(): Got obj. as a parameter, not int.
+
 // TASK: In main(): create a DoublyLinkedList obj. Add it to a random nuber of Goat obj., range 5-20 ~
 // TASK: In main(): call the methods to print both forward and backward
 // TASK: use srand(time(0)), as one of the first lines in main() to randomize your random numbers.
@@ -50,6 +50,10 @@ class Goat {
         color = c;
     }
 
+    void print() {
+        cout << name << " (" << color << ", " << age << ")";
+    }
+
 };
 
 class DoublyLinkedList
@@ -60,7 +64,7 @@ private:
         Goat data;
         Node *prev;
         Node *next;
-        Node(int val, Node *p = nullptr, Node *n = nullptr)
+        Node(Goat val, Node *p = nullptr, Node *n = nullptr)
         {
             data = val;
             prev = p;
@@ -74,10 +78,10 @@ public:
     // constructor
     DoublyLinkedList()
     {
-        head = nullptr;
+        head = nullptr; // I updated these incorrectly before. Found my error
         tail = nullptr;
     }
-    void push_back(int value)
+    void push_back(Goat value) //take Goat parameter.
     {
         Node *newNode = new Node(value);
         if (!tail) // if there's no tail, the list is empty
@@ -89,7 +93,7 @@ public:
             tail = newNode;
         }
     }
-    void push_front(int value)
+    void push_front(Goat value) // take Goat parameter.
     {
         Node *newNode = new Node(value);
         if (!head) // if there's no head, the list is empty
@@ -101,8 +105,7 @@ public:
             head = newNode;
         }
     }
-    void insert_after(int value, int position)
-    {
+    void insert_after(int value, int position) {
         if (position < 0)
         {
             cout << "Position must be >= 0." << endl;
