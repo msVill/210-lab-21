@@ -110,12 +110,12 @@ public:
         }
         Node *current = head;
 
-        while (current)
-        {
-            cout << current->data << " ";
+        while (current) {
+            cout << "  ";
+            current->data.print();
+            cout << endl;
             current = current->next;
         }
-        cout << endl;
     }
     void print_reverse()
     {
@@ -125,7 +125,9 @@ public:
         }
         Node *current = tail;
         while (current) {
-            cout << current->data << " ";
+            cout << "  ";
+            current->data.print();
+            cout << endl;
             current = current->prev;
         }
         cout << endl;
@@ -143,17 +145,24 @@ public:
 // Driver program
 int main()
 {
-    DoublyLinkedList list;
-    int size = rand() % (MAX_LS - MIN_LS + 1) + MIN_LS;
-    for (int i = 0; i < size; ++i)
-        list.push_back(rand() % (MAX_NR - MIN_NR + 1) + MIN_NR);
-    cout << "List forward: ";
-    list.print();
-    cout << "List backward: ";
-    list.print_reverse();
-    cout << "Deleting list, then trying to print.\n";
-    list.~DoublyLinkedList();
-    cout << "List forward: ";
-    list.print();
+    srand(time(0));
+
+    DoublyLinkedList herd;
+
+    int numGoats = rand() % (MAX_LS - MIN_LS + 1) + MIN_LS;
+
+    for (int i = 0; i < numGoats; ++i) {
+
+      Goat g;
+      herd.push_back(g);
+
+    }
+
+    cout << "Forward:" << endl;
+    herd.print();
+
+    cout << "Backward:" << endl;
+    herd.print_reverse();
+
     return 0;
 }
