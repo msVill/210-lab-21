@@ -4,11 +4,9 @@
 #include <ctime>
 using namespace std;
 // Requirements: mod. so that each node has a Goat class object.
-// Create a Goat class. w/--> Private: int age; string name, color; string array names[] (of 15 names) &
-// string array colors[] (15 colors). 2 Constructors.
+
 // Constructor 1: (Default) randomly assign age: 1-20. name: from the 15 element array.
 // color: from the 15 element array.
-// Constructor: (Parameter) 3 parameters. age, name[], color[]
 // TASK: Mod. DoublyLinkedList class's push_front() & push_back(): Got obj. as a parameter, not int.
 // TASK: In main(): create a DoublyLinkedList obj. Add it to a random nuber of Goat obj., range 5-20 ~
 // TASK: In main(): call the methods to print both forward and backward
@@ -36,12 +34,20 @@ class Goat {
     };
 
     public:
-    // Constructors.
+    // Constructors:
+    //default constructor
     Goat() {
         // needs to be randomly selected:
         age = rand() % 20 + 1;
         name = names[rand() % 15]; // wait. this is an array, so I will need to place it within the brackets.
-        color = colors[rand() % 15]
+        color = colors[rand() % 15];
+    }
+
+    // parameter constructor
+    Goat(int a, string n, string c) {
+        age = a;
+        name = n;
+        color = c;
     }
 
 };
